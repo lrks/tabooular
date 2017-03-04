@@ -1,0 +1,53 @@
+<style type="text/css">
+<!--
+table.tabooular {
+  width: auto;
+  height: auto;
+  border-collapse: collapse;
+}
+
+table.tabooular thead {
+  border-top: 0.15rem double #333;
+}
+
+table.tabooular tbody {
+  border-top: 0.075rem solid #333;
+  border-bottom: 0.075rem solid #333;
+}
+
+table.tabooular td, table.tabooular th {
+  padding: 1rem;
+  border: 0;
+}
+
+table.tabooular td.align-center, table.tabooular th.align-center {
+  text-align:center;
+}
+
+table.tabooular td.align-left, table.tabooular th.align-left {
+  text-align:left;
+}
+
+table.tabooular td.align-right, table.tabooular align-th.right {
+  text-align:right;
+}
+
+table.tabooular td.border-right, table.tabooular th.border-right {
+  border-right: 0.075rem solid #333;
+}
+
+table.tabooular td.border-left, table.tabooular th.border-left {
+  border-left: 0.075rem solid #333;
+}
+
+table.tabooular tr.border-bottom {
+  border-bottom: 0.075rem solid #333;
+}
+-->
+</style>
+
+<!--
+ 
+ TABOOULAR OUTPUT HERE
+
+-->

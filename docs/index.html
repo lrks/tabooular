@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Tabooular</title>
+<link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+<style type="text/css">
+<!--
+table.tabooular {
+  width: auto;
+  height: auto;
+  border-collapse: collapse;
+}
+
+table.tabooular thead {
+  border-top: 0.15rem double #333;
+}
+
+table.tabooular tbody {
+  border-top: 0.075rem solid #333;
+  border-bottom: 0.075rem solid #333;
+}
+
+table.tabooular td, table.tabooular th {
+  padding: 1rem;
+  border: 0;
+}
+
+table.tabooular td.align-center, table.tabooular th.align-center {
+  text-align:center;
+}
+
+table.tabooular td.align-left, table.tabooular th.align-left {
+  text-align:left;
+}
+
+table.tabooular td.align-right, table.tabooular align-th.right {
+  text-align:right;
+}
+
+table.tabooular td.border-right, table.tabooular th.border-right {
+  border-right: 0.075rem solid #333;
+}
+
+table.tabooular td.border-left, table.tabooular th.border-left {
+  border-left: 0.075rem solid #333;
+}
+
+table.tabooular tr.border-bottom {
+  border-bottom: 0.075rem solid #333;
+}
+
+td:first-child,th:first-child {
+    padding-left: 1rem;
+}
+
+td:last-child,th:last-child {
+    padding-right: 1rem;
+}
+-->
+</style>
+</head>
+<body class="container">
+<h1 style="margin-top:0.5em">Tabooular Demo <a style="vertical-align:middle" class="button button-outline" href="https://github.com/lrks/tabooular">GitHub</a></h1>
+<hr />
+<form>
+  <a class="button" href="samples/sample1.txt">Sample 1</a>
+  <a class="button" href="samples/sample2.txt">Sample 2</a>
+  <a class="button" href="samples/sample3.txt">Sample 3</a>
+
+  <fieldset>
+    <input type="checkbox" id="escapeField" checked><label class="label-inline" for="escapeField">Escape text</label>
+    <div class="float-right">
+      <input type="checkbox" id="latexField" checked><label class="label-inline" for="latexField">LaTeX</label>
+      <input type="checkbox" id="htmlField" checked><label class="label-inline" for="htmlField">HTML</label>
+      <input type="checkbox" id="liveField" checked><label class="label-inline" for="liveField">LivePreview</label>
+      <input type="checkbox" id="jsonField"><label class="label-inline" for="jsonField">JSON</label>
+    </div>
+    <textarea placeholder="cell-1 | cell-two & cell-san ..." id="inputField" style="height:10em"></textarea>
+  </fieldset>
+</form>
+<hr />
+<article id="latex">
+<h2>LaTeX <a style="vertical-align:middle" class="button button-outline" href="preambles/latex.txt">Preamble</a></h2>
+<pre><code></code></pre>
+</article>
+
+<article id="html">
+<h2>HTML <a style="vertical-align:middle" class="button button-outline" href="preambles/html.txt">Preamble</a></h2>
+<pre><code></code></pre>
+</article>
+
+<article id="live">
+<h2>Live Preview</h2>
+<div style="padding:1rem 1.5rem;margin-bottom:2.5rem;border-left:0.3rem solid #9b4dca;background:#f4f5f6;"></div>
+</article>
+
+<article id="json">
+<h2>JSON</h2>
+<pre><code></code></pre>
+</article>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
+<script src="packed.js" type="text/javascript"></script>
+</body>
+</html>

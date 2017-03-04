@@ -1,0 +1,9 @@
+;
+; Basic Table
+;
+ ID   | Name           & Age & Job       ; <th align="center">ID</th> 
+=====>|<=============== ====>&=========  ; (`&` === `SP`) !== `|`
+ A001 | Taro Sato      & 12  & Student   ; column separator is `|` or `&`
+ A002 | Takashi Suzuki & 24  & Student   ; (`|` === `&`)
+---------------------------------------  ; if ('---'.length > 3) drawLine();
+ B001 | Taro Yamada    & 36  & null

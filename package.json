@@ -1,0 +1,49 @@
+{
+  "name": "tabooular",
+  "version": "0.0.1",
+  "description": "Table Generator for LaTeX, HTML, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "gulp build"
+  },
+  "author": "lrks",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "opts": "^1.2.6"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "browserify-shim": "^3.8.13",
+    "gulp": "^3.9.1",
+    "gulp-peg": "^0.2.0",
+    "pegjs": "^0.10.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lrks/tabooular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lrks/tabooular/issues"
+  },
+  "homepage": "https://github.com/lrks/tabooular#readme",
+  "bin": {
+    "tabooular": "bin/tabooular.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "table"
+  ]
+}

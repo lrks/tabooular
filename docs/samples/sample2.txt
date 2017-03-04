@@ -1,0 +1,17 @@
+;
+; Complicated Table
+; Base: http://tex.stackexchange.com/questions/211273/how-to-create-a-complicated-table-in-latex
+;
+Subject ^ N_trials & aaaa & bbbbb & cccc & dddd & eeee   ; `A ^ B` => \backslashbox{A}{B}, `A _ B` => \slashbox{A}{B}
+===================|======&=======&======&======&======
+ AD              \ & AAAA & BBBBB & CCCC & DDDD & EEEE   ; `\` is Linebreak
+                   & FFFF & GGGGG & HHHH & IIII & JJJJ
+ AS              \ & 1    & > c < &      &      &  六 \  ; > center <
+                   &  2   & >>> colspan=3,    \ &  行 \  ; `\` is optional.
+ NR              \ &   3  &     rowspan=2   <<< &  連 \
+                   &    4 & > r > &      &      &  続 \  ; > right >
+ RA              \ &   5  & < l < &      &      &  連 \  ; < left <
+                   & \&\& & \< \> & \|\| &      &  結    ; Escape
+-------------------------------------------------------
+ Average         \ & ffff & ggg \ & hhhh & ii \ & jjjj
+                   & kkkk & lllll & mmmm & nnnn & oooo
