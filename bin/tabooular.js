@@ -102,9 +102,11 @@ if (input_file === null) {
 	var input = '';
 	var rl = readline.createInterface(process.stdin, process.stdout);
 	rl.on('line', function (line) { input += line + '\n'; });
-	rl.on('close', function () { generate(input); });
+	rl.on('close', function () {
+		generate(input);
+		process.exit(0);
+	});
 } else {
 	generate(fs.readFileSync(input_file).toString());
+	process.exit(0);
 }
-
-process.exit(0);

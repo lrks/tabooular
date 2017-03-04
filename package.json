@@ -1,6 +1,6 @@
 {
   "name": "tabooular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Table Generator for LaTeX, HTML, etc.",
   "main": "index.js",
   "scripts": {
