@@ -11,8 +11,11 @@ $ cat > sample1.txt
  A002 | Takashi Suzuki & 24  & Student   ; (`|` === `&`)
 ---------------------------------------  ; if ('---'.length > 3) drawLine();
  B001 | Taro Yamada    & 36  & null
-$ tabooular.js -if plain -of latex -i sample1.txt
-\begin{tabularx}{\textwidth}{@{}R|LRC@{}}\toprule\multicolumn{1}{c|}{ID}&\multicolumn{1}{c}{Name}&\multicolumn{1}{c}{Age}&\multicolumn{1}{c}{Job}\\\midrule
+$
+$ tabooular.js -if plain -of latex -i sample1.txt --escape
+\begin{tabularx}{\textwidth}{@{}R|LRC@{}}\toprule
+\multicolumn{1}{c|}{ID}&\multicolumn{1}{c}{Name}&\multicolumn{1}{c}{Age}&\multicolumn{1}{c}{Job}\\
+\midrule
 A001&Taro Sato&12&Student\\
 A002&Takashi Suzuki&24&Student\\
 \midrule
@@ -36,4 +39,4 @@ https://lrks.github.io/tabooular/
   * 「縦連結やエスケープに `\` を使うが、`\LaTeX` などはそのまま通す」こともあるようなないような
     * おすすめはしない
   * 「 `;` を1行コメントとして使うが、`printf();` などは通す」
-  * といった継ぎ接ぎを行った結果、文法がめちゃめちゃになってる
+  * といった継ぎ接ぎを行った結果、文法がめちゃめちゃになっている

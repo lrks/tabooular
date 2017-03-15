@@ -1,6 +1,6 @@
 \usepackage{array}
 \usepackage{multirow}
-\usepackage{slashbox}
+\usepackage{diagbox}
 \usepackage{tabularx}
 
 \newcolumntype{C}{>{\centering\arraybackslash}X}
@@ -26,4 +26,4 @@
   %
   %
 \end{table}
-\renewcommand{arraystretch}{1}
+\renewcommand{\arraystretch}{1}

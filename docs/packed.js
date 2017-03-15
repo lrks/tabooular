@@ -150,7 +150,7 @@ function makeLine(row, neck, tag, escape_flg) {
 		if (cls.length !== 0) attr += ' class="' + cls.join(' ') + '"';
 		line += '<' + tag + attr + '>' + data + '</' + tag + '>';
 	});
-	
+
 	return line;
 }
 
@@ -166,9 +166,10 @@ module.exports.toHTML = function(json, escape_flg) {
 		});
 	});
 
-	result += '</tbody></table>';
+	result += '</tbody></table>\n';
 	return result;
 }
+
 },{}],4:[function(require,module,exports){
 'use strict';
 
@@ -356,6 +357,7 @@ function escapeText(str, flg) {
 		'\\-': '{-}',
 	};
 
+	var tmp = str;
 	Object.keys(table).forEach(function (key) {
 		str = str.replace(new RegExp(key, 'g'), table[key]);
 	});
@@ -374,7 +376,11 @@ function makeLine(row, neck, escape_flg) {
 
 		var data = col.data;
 		if (Array.isArray(data)) {
-			data = ((data[1] === '^') ? '\\backslashbox{' : '\\slashbox{') + escapeText(data[0], escape_flg) + '}{' + escapeText(data[2], escape_flg) + '}';
+			var left = (data[0] === '') ? '\\ ' : escapeText(data[0], escape_flg);
+			var right = (data[2] === '') ? '\\ ' : escapeText(data[2], escape_flg);
+			var params = [ data[1] === '^' ? 'dir=NW' : 'dir=NE' ];
+			if (left === right === '\\ ') params.push('height=\\line');
+			data = '\\diagbox[' + params.join(',') + ']{' + left + '}{' + right + '}';
 		} else {
 			data = escapeText(data, escape_flg);
 		}
@@ -404,9 +410,10 @@ module.exports.toLaTeX = function(json, escape_flg) {
 	});
 	result += '\\bottomrule\n';
 
-	result += '\\end{tabularx}';
+	result += '\\end{tabularx}\n';
 	return result;
 }
+
 },{}],6:[function(require,module,exports){
 module.exports = (function() {
   "use strict";

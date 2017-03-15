@@ -5,7 +5,7 @@
  >< @<b>{center} <><<><><>      & <> cen@<t>{t}er ><>>>>>      ; ## Markdown like #######
 ----------------------------------------------------------
  0 \> 1          & 0 \>1        & 0\> 1      & 0>1 or 0\>1  ; `0 > 1, 0 >1, 0> 1` is error.
- (^ \_ ^)        & A ^ B        & A _ B      & x^2          ; `x ^ 2` is \backslashbox{x}{2}
+ (^ \_ ^)        & ^            & A _ B      & x^2          ; `x ^ 2` is \backslashbox{x}{2}
  アイハブア    \ & アイハブア \ & I have a \ & I have a \   ; ascii(line1, line2) ?
  ペン            & Pen          & ペン       & Pen.         ;     line1 + [SP] + line2 : line1 + line2
  \textbf{ABCD}   & >>> {\LaTeX}, \\texttt{ABC}, $\sin$ <<<  ; `[SP]\` is error.
