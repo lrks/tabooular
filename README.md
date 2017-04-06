@@ -12,8 +12,8 @@ $ cat > sample1.txt
 ---------------------------------------  ; if ('---'.length > 3) drawLine();
  B001 | Taro Yamada    & 36  & null
 $
-$ tabooular.js -if plain -of latex -i sample1.txt --escape
-\begin{tabularx}{\textwidth}{@{}R|LRC@{}}\toprule
+$ tabooular -if plain -of latex -i sample1.txt --escape
+\begin{tabular}{r|lrc}\toprule
 \multicolumn{1}{c|}{ID}&\multicolumn{1}{c}{Name}&\multicolumn{1}{c}{Age}&\multicolumn{1}{c}{Job}\\
 \midrule
 A001&Taro Sato&12&Student\\
@@ -21,7 +21,7 @@ A002&Takashi Suzuki&24&Student\\
 \midrule
 B001&Taro Yamada&36&null\\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 ```
 
 ## Install

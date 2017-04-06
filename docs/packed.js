@@ -398,9 +398,9 @@ function makeLine(row, neck, escape_flg) {
 }
 
 module.exports.toLaTeX = function(json, escape_flg) {
-	var result = '\\begin{tabularx}{\\textwidth}{@{}';
-	json.neck.forEach(function(val, idx) { result += (val.bleft ? '|' : '') + val.align.toUpperCase(); });
-	result += '@{}}';
+	var result = '\\begin{tabular}{';
+	json.neck.forEach(function(val, idx) { result += (val.bleft ? '|' : '') + val.align.toLowerCase(); });
+	result += '}';
 	if (json.head.length > 0) result += '\\toprule\n';
 	json.head.forEach(function(row) { result += makeLine(row, json.neck, escape_flg) + '\\\\\n'; });
 
@@ -410,7 +410,7 @@ module.exports.toLaTeX = function(json, escape_flg) {
 	});
 	result += '\\bottomrule\n';
 
-	result += '\\end{tabularx}\n';
+	result += '\\end{tabular}\n';
 	return result;
 }
 

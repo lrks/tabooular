@@ -1,21 +1,16 @@
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{diagbox}
-\usepackage{tabularx}
-
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 \providecommand{\toprule}{\hline\hline}
 \providecommand{\midrule}{\hline}
 \providecommand{\bottomrule}{\hline}
 
-\renewcommand{\arraystretch}{1.25}
 \begin{table}[!htb]
   \centering
   \caption{ CAPTION HERE }
   \label{ table:LABELHERE }
+  \renewcommand{\arraystretch}{1.25}
   %
   %
   %
@@ -26,4 +21,3 @@
   %
   %
 \end{table}
-\renewcommand{\arraystretch}{1}
