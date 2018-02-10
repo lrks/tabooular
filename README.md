@@ -40,3 +40,17 @@ https://lrks.github.io/tabooular/
     * おすすめはしない
   * 「 `;` を1行コメントとして使うが、`printf();` などは通す」
   * といった継ぎ接ぎを行った結果、文法がめちゃめちゃになっている
+  * Demoを見るといい
+
+# 開発
+```
+$ git checkout dev
+$ npm install --only=dev
+$ :
+$ npm run prepublish
+$ :
+$ git push origin develop 
+$ git checkout master
+$ git merge --no-ff develop
+$ npm publish
+```
