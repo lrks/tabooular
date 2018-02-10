@@ -1,9 +1,9 @@
 'use strict';
-var PEG = require('./lib/table');
+const PEG = require('./lib/table');
 
-var json = require('./lib/json');
-var latex = require('./lib/latex');
-var html = require('./lib/html');
+const json = require('./lib/json');
+const latex = require('./lib/latex');
+const html = require('./lib/html');
 
 module.exports = function() {
 	this.data = null;
