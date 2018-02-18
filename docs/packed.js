@@ -85,6 +85,7 @@ const PEG = require('./lib/table');
 const json = require('./lib/json');
 const latex = require('./lib/latex');
 const html = require('./lib/html');
+const pure = require('./lib/pure');
 
 module.exports = function() {
 	this.data = null;
@@ -98,9 +99,10 @@ module.exports = function() {
 	this.toJSON = function() { return this.data; }
 	this.toLaTeX = function() { return this.to(latex.toLaTeX); }
 	this.toHTML = function() { return this.to(html.toHTML); }
+	this.toPure = function() { return this.to(pure.toPure); }
 };
 
-},{"./lib/html":3,"./lib/json":4,"./lib/latex":5,"./lib/table":6}],3:[function(require,module,exports){
+},{"./lib/html":3,"./lib/json":4,"./lib/latex":5,"./lib/pure":6,"./lib/table":7}],3:[function(require,module,exports){
 'use strict';
 
 function escapeText(str, flg) {
@@ -415,6 +417,47 @@ module.exports.toLaTeX = function(json, escape_flg) {
 }
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+function escapeText(str, flg) {
+	if (!flg) return str;
+	return str.replace(/"/g, '\\"');
+}
+
+function makeLine(row, neck, escape_flg) {
+	var lines = [];
+
+	row.forEach(function(col, i) {
+		if (col.type === 'ref') return;
+
+		var data = col.data;
+		if (Array.isArray(data)) {
+			var left = escapeText(data[0], escape_flg);
+			var right = escapeText(data[2], escape_flg);
+			data = `${left} ${escapeText(data[1], escape_flg)} ${right}`;
+		} else {
+			data = escapeText(data, escape_flg);
+		}
+
+		lines.push(`"${data}"`);
+	});
+
+	return lines.join(', ');
+}
+
+module.exports.toPure = function(json, escape_flg) {
+	var result = '';
+	json.head.forEach(function(row) { result += makeLine(row, json.neck, escape_flg) + '\n'; });
+	json.body.forEach(function(rows, i) {
+		rows.forEach(function(row, j) {
+			result += makeLine(row, json.neck, escape_flg) + '\n';
+		});
+	});
+
+	return result;
+}
+
+},{}],7:[function(require,module,exports){
 module.exports = (function() {
   "use strict";
 

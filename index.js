@@ -4,6 +4,7 @@ const PEG = require('./lib/table');
 const json = require('./lib/json');
 const latex = require('./lib/latex');
 const html = require('./lib/html');
+const pure = require('./lib/pure');
 
 module.exports = function() {
 	this.data = null;
@@ -17,4 +18,5 @@ module.exports = function() {
 	this.toJSON = function() { return this.data; }
 	this.toLaTeX = function() { return this.to(latex.toLaTeX); }
 	this.toHTML = function() { return this.to(html.toHTML); }
+	this.toPure = function() { return this.to(pure.toPure); }
 };
