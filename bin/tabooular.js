@@ -88,6 +88,9 @@ function generate(input) {
 	case 'html':
 		result = generator.toHTML();
 		break;
+	case 'pure':
+		result = generator.toPure();
+		break;
 	}
 	if (result === null) process.exit(1);
 	

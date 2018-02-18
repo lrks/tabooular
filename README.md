@@ -44,13 +44,15 @@ https://lrks.github.io/tabooular/
 
 # 開発
 ```
-$ git checkout dev
+$ git checkout develop
 $ npm install --only=dev
+$ :
+$ ./bin/tabooular.js -if plain -of latex -i docs/samples/sample1.txt --escape
 $ :
 $ npm run prepublish
 $ :
 $ git push origin develop 
 $ git checkout master
-$ git merge --no-ff develop
+$ git merge develop
 $ npm publish
 ```
