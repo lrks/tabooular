@@ -1,6 +1,6 @@
 {
   "name": "tabooular",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Table Generator for LaTeX, HTML, etc.",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,12 @@
     "opts": "^1.2.6"
   },
   "devDependencies": {
-    "browserify": "^14.1.0",
-    "browserify-shim": "^3.8.13",
+    "browserify": "^16.2.3",
+    "browserify-shim": "^3.8.14",
     "gulp": "^3.9.1",
     "gulp-peg": "^0.2.0",
     "pegjs": "^0.10.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^2.0.0"
   },
   "repository": {
     "type": "git",
